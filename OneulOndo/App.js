@@ -1,11 +1,32 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 
 export default function App() {
     return (
         <View style={styles.container}>
-            <Text>야사사이!</Text>
-            <StatusBar style="auto" />
+            <View style={styles.city}>
+                <Text style={styles.cityname}>서울</Text>
+            </View>
+            <View style={styles.weather}>
+                <ScrollView>
+                    <View style={styles.day}>
+                        <Text style={styles.temp}>27</Text>
+                        <Text style={styles.description}>Sunny</Text>
+                    </View>
+                    <View style={styles.day}>
+                        <Text style={styles.temp}>27</Text>
+                        <Text style={styles.description}>Sunny</Text>
+                    </View>
+                    <View style={styles.day}>
+                        <Text style={styles.temp}>27</Text>
+                        <Text style={styles.description}>Sunny</Text>
+                    </View>
+                    <View style={styles.day}>
+                        <Text style={styles.temp}>27</Text>
+                        <Text style={styles.description}>Sunny</Text>
+                    </View>
+                </ScrollView>
+            </View>
         </View>
     );
 }
@@ -13,8 +34,32 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
+        backgroundColor: "skyblue",
+    },
+    city: {
+        flex: 1,
+        backgroundColor: "white",
         justifyContent: "center",
+        alignItems: "center",
+    },
+    cityname: {
+        fontSize: 68,
+        fontWeight: "500",
+    },
+    weather: {
+        flex: 3,
+        // backgroundColor: "teal",
+    },
+    day: {
+        flex: 1,
+        alignItems: "center",
+    },
+    temp: {
+        marginTop: 50,
+        fontSize: 168,
+    },
+    description: {
+        marginTop: -30,
+        fontSize: 60,
     },
 });
